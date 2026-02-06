@@ -24,7 +24,7 @@ const Home = () => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://e-store-dn87.onrender.com/api/products');
         const data = Array.isArray(response.data) ? response.data : [];
 
         setSliderProducts(data.filter(p => p.targetSection === 'Slider'));

@@ -12,7 +12,11 @@ connectDB();
 const app = express(); // Pehle app initialize karo
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: 'https://codelabshop.vercel.app', // Apna Vercel link yahan dalo
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes - Iska matlab URL banega: http://localhost:5000/api/auth/...
@@ -45,5 +49,5 @@ app.get('/', (req, res) => {
     res.send("API is running...");
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

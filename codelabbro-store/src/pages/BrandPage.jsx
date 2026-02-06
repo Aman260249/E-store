@@ -13,7 +13,7 @@ const BrandPage = () => {
     const fetchBrandProducts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/products');
+        const response = await axios.get('https://e-store-dn87.onrender.com/api/products');
         
         // Logic: Sirf wahi products jo is Brand ke hain aur BrandPage ke liye mark hain
         const filtered = response.data.filter(p => 

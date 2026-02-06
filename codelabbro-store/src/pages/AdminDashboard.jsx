@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     if (activeTab === 'viewOrders') {
       const fetchOrders = async () => {
         try {
-          const res = await axios.get('http://localhost:5000/api/admin/orders');
+          const res = await axios.get('https://e-store-dn87.onrender.com/api/admin/orders');
           setOrders(res.data.orders);
         } catch (err) { console.error("Orders fetch error", err); }
       };
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     e.preventDefault();
     try {
       const finalProduct = { ...product, specifications: JSON.parse(product.specifications || '{}') };
-      await axios.post('http://localhost:5000/api/products', finalProduct);
+      await axios.post('https://e-store-dn87.onrender.com/api/products', finalProduct);
       alert("🚀 Great job Codelab! Product live hai.");
       setProduct({ name: '', price: '', brand: 'Apple', model: '', category: 'Best Sellers', type: '', image: '', description: '', targetSection: 'Slider', productType: 'Mobile', specifications: '' });
     } catch (err) { alert("Error: JSON format sahi se likho!"); }

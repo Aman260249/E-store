@@ -28,7 +28,7 @@ const AuthModal = ({ isOpen, onClose }) => {
 
     try {
       if (isLogin) {
-        const response = await axios.post('http://localhost:5000/api/auth/login', {
+        const response = await axios.post('https://e-store-dn87.onrender.com/api/auth/login', {
           email: formData.email,
           password: formData.password
         });
@@ -48,7 +48,7 @@ const AuthModal = ({ isOpen, onClose }) => {
           return;
         }
 
-        const response = await axios.post('http://localhost:5000/api/auth/register', {
+        const response = await axios.post('https://e-store-dn87.onrender.com/api/auth/register', {
           name: formData.name,
           email: formData.email,
           password: formData.password
