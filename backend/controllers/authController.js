@@ -30,6 +30,8 @@ exports.register = async (req, res) => {
 };
 
 // --- LOGIN LOGIC ---
+
+// --- LOGIN LOGIC (Update this part) ---
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -48,7 +50,12 @@ exports.login = async (req, res) => {
             success: true,
             message: "Welcome back! 🔥",
             token,
-            user: { id: user._id, name: user.name, email: user.email }
+            user: { 
+                id: user._id, 
+                name: user.name, 
+                email: user.email,
+                role: user.role // <--- FIX: Ye line add karni hai
+            }
         });
     } catch (error) {
         res.status(500).json({ success: false, message: error.message });
